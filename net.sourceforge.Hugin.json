@@ -255,6 +255,10 @@
                 {
                     "type": "patch",
                     "path": "patches/enblend-dl.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/enblend-cxx.patch"
                 }
             ]
         },
