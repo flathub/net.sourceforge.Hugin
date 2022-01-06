@@ -196,7 +196,7 @@
                 "/share/man"
             ],
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "post-install": [
                 "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/exiv2 COPYING"
@@ -324,17 +324,14 @@
                 "desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.CalibrateLensGUI.desktop",
                 "mv ${FLATPAK_DEST}/share/applications/pto_gen.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTOGen.desktop",
                 "desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTOGen.desktop",
+                "mv ${FLATPAK_DEST}/share/mime/packages/hugin.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/hugin ../COPYING.txt"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2020.0/hugin-2020.0.0.tar.bz2",
-                    "sha256": "283e7601259a7914cb075333424410928a439dc5f84216f33e2fe55501fbcacb"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/hugin-appdata.patch"
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2021.0/hugin-2021.0.0.tar.bz2",
+                    "sha256": "047aea8a7fa47844b34ef27c19d3b697e84939dcb1fdbbeb2c204621b66eead9"
                 }
             ]
         }
