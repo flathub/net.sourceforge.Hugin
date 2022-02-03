@@ -216,6 +216,9 @@
             "cleanup": [
                 "/share/man"
             ],
+            "config-opts": [
+                "-DENABLE_OPENMP=on"
+            ],
             "modules": [
                 {
                     "name": "gsl",
