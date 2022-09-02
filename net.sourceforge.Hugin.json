@@ -1,7 +1,7 @@
 {
     "app-id": "net.sourceforge.Hugin",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "21.08",
+    "runtime-version": "22.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "hugin",
     "rename-desktop-file": "hugin.desktop",
@@ -14,7 +14,7 @@
         "--device=dri",
         "--filesystem=home",
         /* ExifTool need this */
-        "--env=PERL5LIB=/app/lib/perl5/site_perl/5.32.0/"
+        "--env=PERL5LIB=/app/lib/perl5/site_perl/5.36.0/"
     ],
     "cleanup": [
         "/share/bakefile",
@@ -286,8 +286,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.cpan.org/src/5.0/perl-5.32.0.tar.gz",
-                    "sha256": "efeb1ce1f10824190ad1cadbcccf6fdb8a5d37007d0100d2d9ae5f2b5900c0b4"
+                    "url": "https://www.cpan.org/src/5.0/perl-5.36.0.tar.gz",
+                    "sha256": "e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7b7a4e00a"
                 },
                 {
                     "type": "script",
