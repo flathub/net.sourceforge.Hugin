@@ -56,17 +56,17 @@
             ]
         },
         {
-            "name" : "boost",
-            "buildsystem" : "simple",
-            "cleanup" : [
+            "name": "boost",
+            "buildsystem": "simple",
+            "cleanup": [
                 "/include",
                 "/lib/libboost_*.a"
             ],
-            "build-commands" : [
+            "build-commands": [
                 "./bootstrap.sh --with-libraries=filesystem",
                 "./b2 install variant=release link=shared runtime-link=shared --prefix=/app -j $FLATPAK_BUILDER_N_JOBS"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type" : "archive",
                     "url" : "https://downloads.sourceforge.net/project/boost/boost/1.68.0/boost_1_68_0.tar.bz2",
@@ -110,9 +110,7 @@
                     ],
                     "build-options": {
                         "cxxflags": "-std=c++14",
-                        "env": {
-                            "LDFLAGS": "-lpthread"
-                        }
+                        "ldflags": "-lpthread"
                     },
                     "sources": [
                         {
@@ -157,9 +155,9 @@
             "cleanup": [
                 "/bin",
                 "/include",
-                "/lib/*.la",
                 "/lib/pkgconfig",
-                "/share/aclocal"
+                "/share/aclocal",
+                "*.la"
             ]
         },
         {
@@ -237,11 +235,11 @@
                         "/bin",
                         "/include",
                         "/lib/pkgconfig",
-                        "/lib/*.a",
-                        "/lib/*.la",
                         "/share/aclocal",
                         "/share/info",
-                        "/share/man"
+                        "/share/man",
+                        "*.a",
+                        "*.la"
                     ]
                 }
             ],
@@ -322,19 +320,20 @@
                 "for s in 16 32 48 128 256; do mv ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/ptbatcher.png ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.PTBatcherGUI.png  ; done",
                 "mv ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ptbatcher.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.PTBatcherGUI.svg",
                 "mv ${FLATPAK_DEST}/share/applications/PTBatcherGUI.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTBatcherGUI.desktop",
-                "desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID}.PTBatcherGUI ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTBatcherGUI.desktop",
+                "desktop-file-edit --set-icon=${FLATPAK_ID}.PTBatcherGUI ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTBatcherGUI.desktop",
                 "mv ${FLATPAK_DEST}/share/applications/calibrate_lens_gui.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.CalibrateLensGUI.desktop",
-                "desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.CalibrateLensGUI.desktop",
+                "desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.CalibrateLensGUI.desktop",
                 "mv ${FLATPAK_DEST}/share/applications/pto_gen.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTOGen.desktop",
-                "desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTOGen.desktop",
+                "desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTOGen.desktop",
                 "mv ${FLATPAK_DEST}/share/mime/packages/hugin.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml",
+                "mv ${FLATPAK_DEST}/share/icons/hicolor/48x48/mimetypes/application-x-ptoptimizer-script.png ${FLATPAK_DEST}/share/icons/hicolor/48x48/mimetypes/${FLATPAK_ID}.application-x-ptoptimizer-script.png",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/hugin ../COPYING.txt"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2021.0/hugin-2021.0.0.tar.bz2",
-                    "sha256": "047aea8a7fa47844b34ef27c19d3b697e84939dcb1fdbbeb2c204621b66eead9"
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2022.0/hugin-2022.0.0.tar.bz2",
+                    "sha256": "97c8562a0ba9a743e0b955a43dfde048b1c60cd9e5f2ee2b69de1a81646e05a7"
                 }
             ]
         }
