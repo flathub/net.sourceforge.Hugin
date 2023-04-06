@@ -1,9 +1,9 @@
 [
    {
       "dest": "perl-libs/Image-ExifTool",
-      "sha256": "3be7cda70b471df589c75a4adbb71bae62e633022b0ba62585f3bcd91b35544f",
+      "sha256": "73dbe06d004c31082a56e78d7f246f2bb0002fbb1835447bc32a2b076f3d32ad",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.30.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.60.tar.gz"
    },
    {
       "commands": [
@@ -12,7 +12,7 @@
          "    mod_dir=$1",
          "    cd $mod_dir",
          "    if [ -f 'Makefile.PL' ]; then",
-         "        perl Makefile.PL && make install",
+         "        perl Makefile.PL PREFIX=${FLATPAK_DEST} && make install PREFIX=${FLATPAK_DEST}",
          "    elif [ -f 'Build.PL' ]; then",
          "        perl Build.PL && ./Build && ./Build install",
          "    else",
