@@ -31,11 +31,9 @@
                 "--with-libpng",
                 "--with-zlib",
                 "--disable-sdltest",
-                "--disable-webkit",
                 "--disable-webview",
                 "--disable-webviewwebkit",
                 "--disable-ribbon",
-                "--disable-propgrid",
                 "--disable-richtext",
                 "--with-expat=builtin",
                 "--with-libiconv=/usr"
@@ -50,8 +48,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5.1/wxWidgets-3.0.5.1.tar.bz2",
-                    "sha256": "440f6e73cf5afb2cbf9af10cec8da6cdd3d3998d527598a53db87099524ac807"
+                    "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.4/wxWidgets-3.2.4.tar.bz2",
+                    "sha256": "0640e1ab716db5af2ecb7389dbef6138d7679261fbff730d23845ba838ca133e"
                 }
             ]
         },
@@ -251,15 +249,11 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/enblend-cmake.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/enblend-dl.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/enblend-cxx.patch"
+                    "paths": [
+                        "patches/enblend-cmake.patch",
+                        "patches/enblend-dl.patch",
+                        "patches/enblend-cxx.patch"
+                    ]
                 }
             ]
         },
@@ -316,6 +310,9 @@
             "name": "hugin",
             "buildsystem": "cmake-ninja",
             "builddir": true,
+            "config-opts": [
+                "-DBUILD_WITH_EPOXY=ON"
+            ],
             "post-install": [
                 "for s in 16 32 48 128 256; do mv ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/ptbatcher.png ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.PTBatcherGUI.png  ; done",
                 "mv ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ptbatcher.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.PTBatcherGUI.svg",
@@ -332,8 +329,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2022.0/hugin-2022.0.0.tar.bz2",
-                    "sha256": "97c8562a0ba9a743e0b955a43dfde048b1c60cd9e5f2ee2b69de1a81646e05a7"
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2023.0/hugin-2023.0.0.tar.bz2",
+                    "sha256": "04a39fccc6017e0544c639bd22309472c574d35b3455cbade1fc3870e631632b"
                 }
             ]
         }
