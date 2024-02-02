@@ -329,6 +329,10 @@
                     "type": "archive",
                     "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2023.0/hugin-2023.0.0.tar.bz2",
                     "sha256": "04a39fccc6017e0544c639bd22309472c574d35b3455cbade1fc3870e631632b"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/hugin-appdata.patch"
                 }
             ]
         }
