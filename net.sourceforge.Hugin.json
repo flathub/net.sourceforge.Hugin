@@ -35,6 +35,7 @@
                 "--disable-webviewwebkit",
                 "--disable-ribbon",
                 "--disable-richtext",
+                "--disable-glcanvasegl",
                 "--with-expat=builtin",
                 "--with-libiconv=/usr"
             ],
@@ -310,9 +311,6 @@
             "name": "hugin",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "config-opts": [
-                "-DBUILD_WITH_EPOXY=ON"
-            ],
             "post-install": [
                 "for s in 16 32 48 128 256; do mv ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/ptbatcher.png ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.PTBatcherGUI.png  ; done",
                 "mv ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ptbatcher.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.PTBatcherGUI.svg",
