@@ -1,0 +1,10 @@
+diff --git a/platforms/linux/appdata/hugin.appdata.xml b/platforms/linux/appdata/hugin.appdata.xml
+index af09f0f..574cf9d 100755
+--- a/platforms/linux/appdata/hugin.appdata.xml
++++ b/platforms/linux/appdata/hugin.appdata.xml
+@@ -45,4 +45,5 @@
+  </screenshots>
+  <url type="homepage">http://hugin.sourceforge.net/</url>
+  <update_contact>tduell_at_iinet.net.au</update_contact>
++ <developer_name>Hugin Developers</developer_name>
+ </component>
