@@ -1,12 +1,16 @@
 {
     "app-id": "net.sourceforge.Hugin",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
+    "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "hugin",
     "rename-desktop-file": "hugin.desktop",
     "rename-icon": "hugin",
     "rename-appdata-file": "hugin.appdata.xml",
+    "rename-mime-file": "hugin.xml",
+    "rename-mime-icons": [
+        "application-x-ptoptimizer-script"
+    ],
     "finish-args": [
         "--share=ipc",
         /* it crashes with Wayland as it tries to use X11 */
@@ -14,7 +18,7 @@
         "--device=dri",
         "--filesystem=home",
         /* ExifTool need this */
-        "--env=PERL5LIB=/app/lib/perl5/site_perl/5.38.0/"
+        "--env=PERL5LIB=/app/lib/perl5/site_perl/5.40.0/"
     ],
     "cleanup": [
         "/share/bakefile",
@@ -75,6 +79,10 @@
         },
         {
             "name": "libpano13",
+            "buildsystem": "cmake",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
@@ -83,8 +91,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/panotools/libpano13/libpano13-2.9.20/libpano13-2.9.20_rc2.tar.gz",
-                    "sha256": "6c7184a8af080934252d55e63a0f83457e2b8d59b3b8bb9ad62a21dea82f16cd"
+                    "url": "https://download.sourceforge.net/project/panotools/libpano13/libpano13-2.9.22/libpano13-2.9.22_rc2.tar.gz",
+                    "sha256": "affc6830cdbe71c28d2731dcbf8dea2acda6d9ffd4609c6dbf3ba0c68440a8e3"
                 }
             ]
         },
@@ -279,8 +287,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.cpan.org/src/5.0/perl-5.38.0.tar.gz",
-                    "sha256": "213ef58089d2f2c972ea353517dc60ec3656f050dcc027666e118b508423e517"
+                    "url": "https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz",
+                    "sha256": "c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8dfe7161f"
                 },
                 {
                     "type": "script",
@@ -320,8 +328,6 @@
                 "desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.CalibrateLensGUI.desktop",
                 "mv ${FLATPAK_DEST}/share/applications/pto_gen.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTOGen.desktop",
                 "desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.PTOGen.desktop",
-                "mv ${FLATPAK_DEST}/share/mime/packages/hugin.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml",
-                "mv ${FLATPAK_DEST}/share/icons/hicolor/48x48/mimetypes/application-x-ptoptimizer-script.png ${FLATPAK_DEST}/share/icons/hicolor/48x48/mimetypes/${FLATPAK_ID}.application-x-ptoptimizer-script.png",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/hugin ../COPYING.txt"
             ],
             "sources": [

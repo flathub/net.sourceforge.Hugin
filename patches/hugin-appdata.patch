@@ -1,8 +1,21 @@
 diff --git a/platforms/linux/appdata/hugin.appdata.xml b/platforms/linux/appdata/hugin.appdata.xml
-index af09f0f..574cf9d 100755
+index af09f0f..b929b1c 100755
 --- a/platforms/linux/appdata/hugin.appdata.xml
 +++ b/platforms/linux/appdata/hugin.appdata.xml
-@@ -45,4 +45,5 @@
+@@ -37,12 +37,13 @@
+   </ul>
+  </description>
+  <screenshots>
+-  <screenshot type="default">http://hugin.sourceforge.net/screenshots/appdata/hugin-1.png</screenshot>
+-  <screenshot>http://hugin.sourceforge.net/screenshots/appdata/hugin-2.png</screenshot>
+-  <screenshot>http://hugin.sourceforge.net/screenshots/appdata/hugin-3.png</screenshot>
+-  <screenshot>http://hugin.sourceforge.net/screenshots/appdata/hugin-4.png</screenshot>
+-  <screenshot>http://hugin.sourceforge.net/screenshots/appdata/hugin-5.png</screenshot>
++ <screenshot type="default"><image>http://hugin.sourceforge.net/screenshots/appdata/hugin-1.png</image></screenshot>
++  <screenshot><image>http://hugin.sourceforge.net/screenshots/appdata/hugin-2.png</image></screenshot>
++  <screenshot><image>http://hugin.sourceforge.net/screenshots/appdata/hugin-3.png</image></screenshot>
++  <screenshot><image>http://hugin.sourceforge.net/screenshots/appdata/hugin-4.png</image></screenshot>
++  <screenshot><image>http://hugin.sourceforge.net/screenshots/appdata/hugin-5.png</image></screenshot>
   </screenshots>
   <url type="homepage">http://hugin.sourceforge.net/</url>
   <update_contact>tduell_at_iinet.net.au</update_contact>
