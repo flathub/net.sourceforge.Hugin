@@ -24,7 +24,8 @@
         "/share/bakefile",
         "/share/man",
         "/include",
-        "/bin/xmp*"
+        "/bin/xmp*",
+        "*.a"
     ],
     "modules": [
         "shared-modules/glu/glu-9.json",
@@ -87,7 +88,8 @@
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
-                "/share/man"
+                "/share/man",
+                "/share/pano13/doc"
             ],
             "sources": [
                 {
