@@ -79,7 +79,8 @@
         },
         {
             "name": "libpano13",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
