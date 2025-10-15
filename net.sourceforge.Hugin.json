@@ -242,7 +242,7 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "http://mirror.sergal.org/gnu/gsl/gsl-2.5.tar.gz",
+                            "url": "https://mirror.cs.odu.edu/gnu/gsl/gsl-2.5.tar.gz",
                             "sha256": "0460ad7c2542caaddc6729762952d345374784100223995eb14d614861f2258d"
                         }
                     ],
