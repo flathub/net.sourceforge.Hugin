@@ -1,9 +1,9 @@
 [
    {
       "dest": "perl-libs/Image-ExifTool",
-      "sha256": "73dbe06d004c31082a56e78d7f246f2bb0002fbb1835447bc32a2b076f3d32ad",
+      "sha256": "328a4a365db7d1051322897138a0665c405107e53f829d8d50ccf43b328e8c28",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-12.60.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.36.tar.gz"
    },
    {
       "commands": [
